@@ -3,12 +3,25 @@ name = "legibot2"
 version = "0.1.0"
 description = ""
 authors = ["Jennifer Wilcox <jennifer@nitori.org>"]
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+aiohttp = "^3.9.5"
+discord-py = "^2.4.0"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-asyncio = "^0.23.7"
+ruff = "^0.5.1"
+black = "^24.4.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP"]
+ignore = ["E501"]
